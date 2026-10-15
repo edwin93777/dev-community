@@ -7,6 +7,8 @@ export function validateEnvironment(environment: Environment): Environment {
     'DB_USERNAME',
     'DB_PASSWORD',
     'DB_DATABASE',
+    'DB_LOGGING',
+    'DB_SYNCHRONIZE',
   ];
   const missing = required.filter((key) => environment[key] === undefined);
 
@@ -32,7 +34,7 @@ export function validateEnvironment(environment: Environment): Environment {
 
   for (const key of ['DB_LOGGING', 'DB_SYNCHRONIZE']) {
     const value = environment[key];
-    if (value !== undefined && value !== 'true' && value !== 'false') {
+    if (value !== 'true' && value !== 'false') {
       throw new Error(`${key} solo puede ser true o false.`);
     }
   }

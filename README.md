@@ -28,7 +28,8 @@
 ## Base de datos y documentación de la API
 
 La conexión MySQL se configura únicamente mediante las variables de entorno
-`DB_HOST`, `DB_PORT`, `DB_USERNAME`, `DB_PASSWORD` y `DB_DATABASE`. Copia
+`DB_HOST`, `DB_PORT`, `DB_USERNAME`, `DB_PASSWORD`, `DB_DATABASE`,
+`DB_LOGGING` y `DB_SYNCHRONIZE`. Copia
 `.env.example` a `.env` y reemplaza los valores de ejemplo antes de iniciar la
 aplicación. `DB_SYNCHRONIZE=true` permite que TypeORM cree/actualice las tablas
 desde las entidades durante el desarrollo; mantenlo en `false` en producción y
