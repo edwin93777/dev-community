@@ -7,15 +7,14 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 import type { Relation } from 'typeorm';
 import { Post } from '../../posts/entities/post.entity.js';
 import { User } from '../../users/entities/user.entity.js';
 
 @Entity({ name: 'reacciones' })
-@Index('uq_reacciones_usuario_publicacion', ['usuarioId', 'publicacionId'], {
-  unique: true,
-})
+@Unique('uq_reacciones_usuario_publicacion', ['usuarioId', 'publicacionId'])
 @Index('idx_reacciones_publicacion_id', ['publicacionId'])
 @Index('idx_reacciones_usuario_id', ['usuarioId'])
 export class Reaction {
