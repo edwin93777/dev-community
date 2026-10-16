@@ -1,0 +1,1 @@
+export { Comment as Comentario } from '../../modules/comments/entities/comment.entity.js';

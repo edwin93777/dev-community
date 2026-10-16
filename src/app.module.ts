@@ -9,6 +9,7 @@ import { RolesModule } from './modules/roles/roles.module.js';
 import { PostsModule } from './modules/posts/posts.module.js';
 import { CommentsModule } from './modules/comments/comments.module.js';
 import { ReactionsModule } from './modules/reactions/reactions.module.js';
+import { ComentariosModule } from './comentarios/comentarios.module.js';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -22,6 +23,7 @@ import { ReactionsModule } from './modules/reactions/reactions.module.js';
     RolesModule,
     PostsModule,
     CommentsModule,
+    ComentariosModule,
     ReactionsModule,
   ],
 })
