@@ -15,8 +15,8 @@ export const configuration = () => {
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       charset: process.env.DB_CHARSET,
-      logging: process.env.DB_LOGGING === 'true',
-      synchronize: process.env.DB_SYNCHRONIZE === 'true',
+      logging: Boolean(process.env.DB_LOGGING),
+      synchronize: Boolean(process.env.DB_SYNCHRONIZE),
     },
     swagger: {
       title: process.env.SWAGGER_TITLE,
