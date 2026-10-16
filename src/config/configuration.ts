@@ -18,6 +18,10 @@ export const configuration = () => {
       logging: Boolean(process.env.DB_LOGGING),
       synchronize: Boolean(process.env.DB_SYNCHRONIZE),
     },
+    jwt: {
+      secret: process.env.JWT_SECRET,
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    },
     swagger: {
       title: process.env.SWAGGER_TITLE,
       description: process.env.SWAGGER_DESCRIPTION,
