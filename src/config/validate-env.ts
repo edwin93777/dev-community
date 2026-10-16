@@ -9,6 +9,8 @@ export function validateEnvironment(environment: Environment): Environment {
     'DB_DATABASE',
     'DB_LOGGING',
     'DB_SYNCHRONIZE',
+    'JWT_SECRET',
+    'JWT_EXPIRES_IN',
   ];
   const missing = required.filter((key) => environment[key] === undefined);
 
@@ -44,6 +46,10 @@ export function validateEnvironment(environment: Environment): Environment {
     environment.DB_SYNCHRONIZE === 'true'
   ) {
     throw new Error('DB_SYNCHRONIZE debe ser false en producción.');
+  }
+
+  if ((environment.JWT_SECRET ?? '').length < 32) {
+    throw new Error('JWT_SECRET debe tener al menos 32 caracteres.');
   }
 
   return environment;
